@@ -1,0 +1,35 @@
+/* Kosaic 公開網站：說明頁用的單欄版面。中性灰綠底＋深青強調色 */
+:root {
+  --bg: #f5f6f4; --paper: #ffffff; --ink: #1d2422; --muted: #5a6562; --rule: #d8dcd9; --accent: #1f6f68; --tint: #e8f1ef;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #141917; --paper: #1b2120; --ink: #e5eae8; --muted: #a0aba8; --rule: #2f3836; --accent: #6cc3b9; --tint: #1f2c2a; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.8; padding-inline: 16px; padding-block: 28px 56px; }
+main, header, footer { max-width: 680px; margin: 0 auto; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; margin-bottom: 24px; }
+.brand { font-weight: 700; font-size: 1.35rem; letter-spacing: .02em; color: var(--ink); text-decoration: none; }
+.brand span { color: var(--accent); }
+nav { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .92rem; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a[aria-current="page"], nav a:hover { color: var(--accent); }
+main { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: clamp(20px, 5vw, 40px); display: grid; gap: 22px; }
+h1 { font-size: 1.6rem; line-height: 1.35; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.12rem; margin: 0; padding-top: 4px; }
+p, ul, ol { margin: 0; }
+ul, ol { padding-left: 1.3em; display: grid; gap: 6px; }
+section { display: grid; gap: 10px; }
+a { color: var(--accent); }
+.lead { color: var(--muted); }
+.box { background: var(--tint); border-radius: 6px; padding: 14px 18px; display: grid; gap: 8px; }
+.mail { font-weight: 700; user-select: all; }
+.table { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .93rem; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+th { color: var(--muted); font-weight: 500; font-size: .85rem; }
+footer { margin-top: 20px; font-size: .82rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 16px; justify-content: space-between; }
+footer a { color: var(--muted); }
